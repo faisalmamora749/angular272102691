@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +9,21 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('angular272102691');
+
+  constructor(private router: Router) {
+    
+    this.router.events.subscribe(event => {
+    if (event instanceof NavigationEnd) {
+      const body = document.body;
+
+      if (body.classList.contains('sidebar-open')) {
+        body.classList.remove('sidebar-open');
+      }
+
+      document.querySelectorAll('.menu-open').forEach(menu => {
+        menu.classList.remove('menu-open');
+      });
+    }
+    });
+  }
 }

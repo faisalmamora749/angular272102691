@@ -11,4 +11,9 @@ export class Sidebar {
 
   @Input() moduleName: string = "";
 
+  toggleMenu(event: Event) {
+    event.preventDefault();
+    const parent = (event.currentTarget as HTMLElement).closest('.nav-item');
+    parent?.classList.toggle('menu-open');
+  }
 }
