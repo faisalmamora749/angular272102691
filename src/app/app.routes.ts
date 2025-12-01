@@ -5,6 +5,7 @@ import { Admin } from './admin/admin';
 import { Dashboard2 } from './dashboard2/dashboard2';
 import { Dashboard3 } from './dashboard3/dashboard3';
 import { Mahasiswa } from './mahasiswa/mahasiswa';
+import { otentikasiGuard } from './otentikasi-guard';
 
 
 
@@ -13,11 +14,11 @@ import { Mahasiswa } from './mahasiswa/mahasiswa';
 export const routes: Routes = [
     { path: "", redirectTo: "login", pathMatch: "full" },
     { path: "admin", component: Admin },
-    { path: "dashboard", component: Dashboard },
-    { path: "dashboard2", component: Dashboard2 },
+    { path: "dashboard", component: Dashboard, canActivate: [otentikasiGuard] },
+    { path: "dashboard2", component: Dashboard2, canActivate: [otentikasiGuard] },
     { path: "dashboard3", component: Dashboard3 },
     { path: "login", component: Login },
-    { path: "mahasiswa", component: Mahasiswa }
+    { path: "mahasiswa", component: Mahasiswa, canActivate: [otentikasiGuard] }
 ];
   
     
