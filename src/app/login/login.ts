@@ -12,6 +12,9 @@ declare const $: any;
   styleUrl: './login.css'
 })
 export class Login {
+signIn() {
+throw new Error('Method not implemented.');
+}
 signin() {
 throw new Error('Method not implemented.');
 }
