@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Renderer2 } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
 declare const $: any;
@@ -15,7 +15,9 @@ export class Login {
 signin() {
 throw new Error('Method not implemented.');
 }
-  constructor(private renderer: Renderer2, private httpClient: HttpClient, private router: Router, private cookieService: CookieService) {
+  constructor(private renderer: Renderer2, private httpClient: HttpClient, 
+    private router: Router, private cookieService: CookieService) 
+    {
     this.renderer.addClass(document.body, "login-page");
 
     this.renderer.removeClass(document.body, "sidebar-mini");

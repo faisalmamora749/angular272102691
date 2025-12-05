@@ -14,7 +14,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{ username }}</a>
         </div>
       </div>
 
@@ -672,6 +672,11 @@
               <p>Informational</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a [routerLink]="['/logout']" routerLinkActive="router-link-active" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Logout</p>
+            </a>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

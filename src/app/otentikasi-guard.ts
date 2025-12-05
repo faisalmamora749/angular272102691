@@ -6,7 +6,7 @@ export const otentikasiGuard: CanActivateFn = (route, state) => {
     console.log("otentikasi dimulai");
 
     var userId = inject(CookieService).get("userId");
-    console.log("userId di cookie: " + userId);
+    console.log("userId: " + userId);
 
     if (userId == null) {
       // Anggap belum login
